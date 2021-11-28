@@ -31,11 +31,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `proyecto_sentiments2`.`AUTHORS_SEVERAL GENRES`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `proyecto_sentiments2`.`AUTHORS_SEVERAL GENRES` (
-  `idAUTHORS_SEVERAL GENRES` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `proyecto_sentiments2`.`AUTHORS_SEVERAL_GENRES` (
+  `idAUTHORS_SEVERAL_GENRES` INT NOT NULL AUTO_INCREMENT,
   `AUTHOR_idAutor` INT NOT NULL,
   `GENRE_idGenre` INT NOT NULL,
-  PRIMARY KEY (`idAUTHORS_SEVERAL GENRES`, `AUTHOR_idAutor`, `GENRE_idGenre`))
+  PRIMARY KEY (`idAUTHORS_SEVERAL_GENRES`, `AUTHOR_idAutor`, `GENRE_idGenre`))
 ENGINE = InnoDB;
 
 
@@ -54,7 +54,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `proyecto_sentiments2`.`QUOTES` (
   `idFrases célebres` INT NOT NULL AUTO_INCREMENT,
-  `Frases` VARCHAR(200) NULL,
+  `Frases` VARCHAR(500) NULL,
   `AUTHOR_idAutor` INT NOT NULL,
   `GENRE_idGenre` INT NOT NULL,
   PRIMARY KEY (`idFrases célebres`))
