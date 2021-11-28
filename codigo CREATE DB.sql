@@ -53,11 +53,11 @@ ENGINE = InnoDB;
 -- Table `proyecto_sentiments2`.`QUOTES`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `proyecto_sentiments2`.`QUOTES` (
-  `idFrases célebres` INT NOT NULL AUTO_INCREMENT,
+  `idFrases` INT NOT NULL AUTO_INCREMENT,
   `Frases` VARCHAR(500) NULL,
   `AUTHOR_idAutor` INT NOT NULL,
   `GENRE_idGenre` INT NOT NULL,
-  PRIMARY KEY (`idFrases célebres`))
+  PRIMARY KEY (`idFrases`))
 ENGINE = InnoDB;
 
 

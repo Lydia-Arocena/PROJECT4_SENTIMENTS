@@ -17,15 +17,6 @@ def listado_frases():
 
 
 
-@app.route("/traducido")
-def translation():
-    lan = request.args.get("idioma")
-    frase = request.args["quote"]
-    traducida = sqt.translation(lan)
-    diccionario = {"frase célebre": frase, "Traducción": traducida}
-    return jsonify(diccionario)
-
-
 
 
 
