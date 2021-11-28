@@ -16,7 +16,10 @@ def listado_frases():
     return jsonify(quote)
 
 
-
+@app.route("/frases/<name>") #Me devuelve todas las frases y no me filtra por autor :(
+def autor_frase(name):
+    frases = sqt.frases_porautor(f"{name}")
+    return jsonify(frases)
 
 
 
