@@ -16,10 +16,28 @@ def listado_frases():
     return jsonify(quote)
 
 
-@app.route("/frases/<name>") #Me devuelve todas las frases y no me filtra por autor :(
+@app.route("/frases/<name>") 
 def autor_frase(name):
-    frases = sqt.frases_porautor(f"{name}")
+    frases = sqt.frases_porautor(name)
     return jsonify(frases)
+
+
+@app.route("/frases_g/<genero>") 
+def genero_frase(genero):
+    generos = sqt.frase_porgenero(genero)
+    return jsonify(generos)
+
+
+@app.route("/random") 
+def aleatoria():
+    frase_dia = sqt.random_quote()
+    return jsonify(frase_dia)
+
+
+@app.route("/translation") 
+def traduccion():
+    traducida = sqt.traslation()
+    return jsonify(traducida)
 
 
 
