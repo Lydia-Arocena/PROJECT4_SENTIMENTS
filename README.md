@@ -1,6 +1,6 @@
 # PROYECTO4_SENTIMENTS
 
-![imagen](foto_quote.PNG)
+![imagen](https://github.com/Lydia-Arocena/PROYECTO4_SENTIMENTS/blob/main/foto_quote.png)
 
 # Creando una API de Frases célebres:
 En este proyecto he creado una API que permite obtener información de una base de datos (MySQL) sobre frases célebres de multitud de autores y los géneros a las que pertenecen.
