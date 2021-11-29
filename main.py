@@ -46,4 +46,18 @@ def random_aut_gen_idioma(genero, autor):
     ran = sqt.random_aut_gen_2(lan, genero, autor)
     return jsonify(ran)
 
+
+@app.route("/nuevafrase", methods=["POST"])
+def insertafrase():
+    author = request.form.get("author")
+    genre = request.form.get("genre")
+    quote = request.form.get("quote")
+    return sqt.nuevafrase(author, genre, quote)
+
+
+
+
+
+
+
 app.run(debug=True)

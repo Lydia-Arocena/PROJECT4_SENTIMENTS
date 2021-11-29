@@ -76,3 +76,10 @@ def random_aut_gen_2(lang, genero, autor):
     else:
         return random_aut_gen(genero, autor)
     
+
+def nuevafrase(author, genre, quote):
+    engine.execute(f"""
+    INSERT INTO quotes (AUTHOR_idAutor, GENRE_idGenre, Frases)
+    VALUES ({author}, '{genre}', '{quote}');
+    """)
+    return f"Se ha introducido correctamente: {author} {genre} {quote}"
