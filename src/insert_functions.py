@@ -1,3 +1,5 @@
+from config.configuration import engine
+
 def remplazo_comas(frase):
     """
     Sustituye los ' por `.
@@ -22,6 +24,7 @@ def replace_author_id(x):
     """
     Devuelve una lista de ids de autores cuando le paso los nombres de los mismos.
     """
+
     for au in range(len(autores_id)):
         if x == (autores_id[au][1]):
             return autores_id[au][0]
