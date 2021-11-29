@@ -34,11 +34,16 @@ def aleatoria():
     return jsonify(frase_dia)
 
 
-@app.route("/translation") 
-def traduccion():
-    traducida = sqt.traslation()
-    return jsonify(traducida)
+@app.route("/frases_/<genero>/<autor>") 
+def random_aut_gen(genero, autor):
+    ran = sqt.random_aut_gen(genero, autor)
+    return jsonify(ran)
 
 
+@app.route("/frases_lan/<genero>/<autor>") 
+def random_aut_gen_idioma(genero, autor):
+    lan = request.args.get("idioma")
+    ran = sqt.random_aut_gen_2(lan, genero, autor)
+    return jsonify(ran)
 
 app.run(debug=True)

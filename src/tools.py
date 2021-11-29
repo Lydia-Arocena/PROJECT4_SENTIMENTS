@@ -49,8 +49,30 @@ def random_quote():
     return ran
 
 
-def traslation(quote):
-    query= list(engine.execute("SELECT (Frases) FROM proyecto_sentiments2.quotes;"))
-    translator = Translator()
-    lista_frases =  [{"frase traducida": translator.translate( elemento[0])} for elemento in query]
-    return lista_frases
+def random_aut_gen(genero, autor):
+    query = list(engine.execute(f"""
+    SELECT q.Frases
+    FROM author as a
+    INNER JOIN quotes as q
+    ON a.idAutor=q.AUTHOR_idAutor
+    INNER JOIN genre as g
+    ON g.idGenre=q.GENRE_idGenre
+    WHERE Genre='{genero}'and Nombre='{autor}';
+    """))
+    lista_r =  [{"esta ": elemento[0]} for elemento in query]
+    frase_random=random.choice(lista_r)
+    dicc_ =  {f"La frase de '{autor}' sobre '{genero}' es ": frase_random}
+    return dicc_
+
+
+def random_aut_gen_2(lang, genero, autor):
+    trans = Translator()
+    if lang == "en":
+        return random_aut_gen(genero, autor)
+    elif lang == "es":
+        sintraducir = random_aut_gen(genero, autor)
+        traducido = trans.translate(random_aut_gen(genero,autor), dest="es").text
+        return f"Traducción: {traducido}"
+    else:
+        return random_aut_gen(genero, autor)
+    
