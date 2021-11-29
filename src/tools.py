@@ -1,9 +1,9 @@
 from config.configuration import engine
 import pandas as pd
-from textblob import TextBlob
 import random
 from datetime import datetime
 from googletrans import Translator
+
 
 
 
@@ -77,9 +77,18 @@ def random_aut_gen_2(lang, genero, autor):
         return random_aut_gen(genero, autor)
     
 
+
 def nuevafrase(author, genre, quote):
     engine.execute(f"""
     INSERT INTO quotes (AUTHOR_idAutor, GENRE_idGenre, Frases)
     VALUES ({author}, '{genre}', '{quote}');
     """)
     return f"Se ha introducido correctamente: {author} {genre} {quote}"
+
+
+def nuevoautor(author):
+    engine.execute(f"""
+    INSERT INTO author(Nombre)
+    VALUES ('{author}');
+    """)
+    return f"Se ha introducido correctamente el : {author}"
