@@ -1,13 +1,30 @@
 # PROYECTO4_SENTIMENTS
 
-![imagen](https://github.com/Lydia-Arocena/PROYECTO4_SENTIMENTS/blob/main/foto_quote.png)
+![imagen](foto_quote.png)
 
 # Creando una API de Frases célebres:
 En este proyecto he creado una API que permite obtener información de una base de datos (MySQL) sobre frases célebres de multitud de autores y los géneros a las que pertenecen.
 
 Analizando sentimientos de cada uno de los autores con TextBlob y NLP (procesamiento del lenguaje natural) en Python.
 
-### ¿Cómo funciona?
+### __Estructura del proyecto__:
+Este repositorio está dividido de la siguiente manera:
+- config: carpeta que contiene el archivo "configuration.py" para establecer la conexión con mi base de datos de MySQL.
+- data: carpeta donde está el csv de las frases que he insertado en la base de datos.
+- Images: carpeta donde guardo la foto de la portada del Readme.
+- MySQL: carpeta donde figura el archivo del código de la creación de la base de datos en MySQL.
+- notebooks: contiene tres archivos de jupyter notebooks:
+    - 1.INSERT_DATA_SQL: archivo para insertar los datos a MySQL.
+    - 2.API_REQUESTS: archivo donde hago las llamadas a la API para probar probar los diferentes endpoints que he creado.
+    - 3.NLP: Análisis de sentimientos.
+- src: carpeta que contiene los siguientes archivos .py con las diferentes funciones utilizadas para la creación de los endpoints:
+    - init.
+    - insert_functions.
+    - NLP_functions.
+    - tools.
+
+
+### __¿Cómo funciona?__
 ## @get
 
 - /autores
@@ -101,3 +118,25 @@ url = "http://127.0.0.1:5000/nuevoautor"
 requests.post(url, data=autor)
 ```
 
+### __Librerías & recursos utilizados__:
+Los datos de las frases y sus respectivos autores los he obtenido del siguiente dataset:
+- [dataset](https://raw.githubusercontent.com/akhiltak/inspirational-quotes/master/Quotes.csv)
+
+Para este proyecto he utilizado las siguientes librerías:
+- [Requests](https://docs.python-requests.org/en/latest/)
+- [sqlalchemy](https://docs.sqlalchemy.org/en/14/) 
+- [Pandas](https://pandas.pydata.org/)
+- [getpass](https://docs.python.org/es/3/library/getpass.html)
+- [Sys](https://docs.python.org/3/library/sys.html)
+- [string](https://docs.python.org/3/library/string.html)
+- [spacy](https://spacy.io/api/doc)
+- [en_core_web_sm](https://spacy.io/models/en)
+- [stopwords](https://pypi.org/project/stop-words/)
+- [Regex](https://docs.python.org/3/library/re.html)
+- [Seaborn](https://seaborn.pydata.org/)
+- [Matplotli.pyplot](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html)
+- [TextBlob](https://textblob.readthedocs.io/en/dev/)
+- [nltk](https://www.nltk.org/)
+- [random](https://docs.python.org/3/library/random.html)
+- [datetime](https://docs.python.org/3/library/datetime.html)
+- [googletrans](https://py-googletrans.readthedocs.io/en/latest/)
