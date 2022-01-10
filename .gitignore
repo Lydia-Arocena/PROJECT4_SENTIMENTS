@@ -3,4 +3,4 @@ src/__pycachee__/
 */**.ipynb_checkpoints
 */**__pycache__
 */**.ipynb
-.env
+notebooks/.env
