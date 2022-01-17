@@ -23,21 +23,15 @@ def getId(tabla,string):
     elif tabla == "genre":
         return list(engine.execute(f"SELECT idGenre FROM genre WHERE genre ='{string}';"))[0][0]
 
-# def replace_author_id2(x, autores_id):
-#     """
-#     Devuelve una lista de ids de autores cuando le paso los nombres de los mismos.
-#     """
-#     for i in x["AUTHOR"]:
-#         for au in range(len(autores_id)): 
-
-#             if i == (autores_id[au][1]):
-#                 return autores_id[au][0]
 
 
 
 def replace_author_id(x, autores_id):
     """
     Devuelve una lista de ids de autores cuando le paso los nombres de los mismos.
+    Args: x (elemento de la columna autores,string).
+          autores_id: lista de tuplas id, autor.
+    Return: lista de ids de autores.
     """
 
     for au in range(len(autores_id)):
@@ -48,6 +42,9 @@ def replace_author_id(x, autores_id):
 def replace_genre_id(x, genre_id):
     """
     Devuelve una lista de ids de los géneros cuando le paso los nombres de los mismos.
+    Args: x (elemento de la columna género,string).
+          genre_id: lista de tuplas id, género.
+    Return: lista de ids de géneros.
     """
 
     for g in range(len(genre_id)):
